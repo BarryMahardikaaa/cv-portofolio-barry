@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="560" viewBox="0 0 800 560">
+  <rect width="800" height="560" fill="#FDFCF8"/>
+  <rect x="24" y="24" width="752" height="512" fill="none" stroke="#CFA144" stroke-width="3"/>
+  <rect x="36" y="36" width="728" height="488" fill="none" stroke="#16233B" stroke-width="1"/>
+  <text x="400" y="140" font-family="Georgia, serif" font-size="44" fill="#16233B" text-anchor="middle">SERTIFIKAT</text>
+  <text x="400" y="185" font-family="Georgia, serif" font-size="18" fill="#5B6472" text-anchor="middle">Penghargaan / Pelatihan</text>
+  <line x1="280" y1="210" x2="520" y2="210" stroke="#CFA144" stroke-width="2"/>
+  <text x="400" y="280" font-family="Georgia, serif" font-size="26" fill="#1C2433" text-anchor="middle">Nama Lengkap Anda</text>
+  <text x="400" y="330" font-family="Arial, sans-serif" font-size="16" fill="#5B6472" text-anchor="middle">Telah menyelesaikan / memperoleh</text>
+  <text x="400" y="370" font-family="Arial, sans-serif" font-size="20" fill="#1C2433" text-anchor="middle">Nama Sertifikat Contoh</text>
+  <text x="400" y="470" font-family="Arial, sans-serif" font-size="14" fill="#8A93A3" text-anchor="middle">— ganti file ini dengan scan sertifikat asli (jpg/png) —</text>
+</svg>

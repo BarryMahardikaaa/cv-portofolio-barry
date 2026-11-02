@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="560" viewBox="0 0 800 560">
+  <rect width="800" height="560" fill="#FDFCF8"/>
+  <rect x="24" y="24" width="752" height="512" fill="none" stroke="#CFA144" stroke-width="3"/>
+  <rect x="36" y="36" width="728" height="488" fill="none" stroke="#16233B" stroke-width="1"/>
+  <text x="400" y="118" font-family="Georgia, serif" font-size="40" fill="#16233B" text-anchor="middle">SERTIFIKAT</text>
+  <text x="400" y="156" font-family="Arial, sans-serif" font-size="17" fill="#5B6472" text-anchor="middle">Rector Cup - Tingkat Kampus</text>
+  <line x1="280" y1="180" x2="520" y2="180" stroke="#CFA144" stroke-width="2"/>
+  <text x="400" y="246" font-family="Arial, sans-serif" font-size="15" fill="#5B6472" text-anchor="middle">Diberikan kepada</text>
+  <text x="400" y="286" font-family="Georgia, serif" font-size="26" fill="#1C2433" text-anchor="middle">AHMAD BARRY MAHARDIKA</text>
+  <text x="400" y="328" font-family="Arial, sans-serif" font-size="14" fill="#5B6472" text-anchor="middle">atas pencapaian sebagai</text>
+  <text x="400" y="366" font-family="Georgia, serif" font-size="22" fill="#1C2433" text-anchor="middle">Juara 3 - Rector Cup Basket 2025</text>
+  <rect x="270" y="398" width="260" height="36" rx="18" fill="#CFA144" opacity="0.18"/>
+  <text x="400" y="422" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#8A6A1B" text-anchor="middle">Peringkat 3</text>
+</svg>

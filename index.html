@@ -1,0 +1,1925 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- UBAH: judul tab browser -->
+    <title>AHMAD BARRY MAHARDIKA | CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ============================================================
+   PALET & VARIABEL — ubah warna cukup di sini
+   ============================================================ */
+      :root {
+        --navy: #16233b;
+        --navy-2: #24365c; /* gradasi hero */
+        --navy-soft: #1f2e4a;
+        --paper: #f6f7f9;
+        --white: #ffffff;
+        --gold: #cfa144;
+        --gold-soft: #f3e9ce;
+        --text: #1c2433;
+        --muted: #5b6472;
+        --line: #e4e7ec;
+
+        --font-display: "Fraunces", Georgia, serif;
+        --font-body: "Albert Sans", "Segoe UI", sans-serif;
+
+        --radius: 14px;
+        --shadow: 0 4px 20px rgba(22, 35, 59, 0.08);
+        --shadow-hover: 0 10px 32px rgba(22, 35, 59, 0.14);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 76px;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--paper);
+        color: var(--text);
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-size-adjust: 100%; /* cegah zoom otomatis teks di iOS */
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+      }
+
+      :focus-visible {
+        outline: 3px solid var(--gold);
+        outline-offset: 3px;
+        border-radius: 2px;
+      }
+
+      .wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* ============================================================
+   NAVBAR
+   ============================================================ */
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(22, 35, 59, 0.96);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(207, 161, 68, 0.25);
+      }
+      .navbar .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* menu ditengahkan */
+        height: 64px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 4px;
+        list-style: none;
+      }
+      .nav-links a {
+        position: relative;
+        color: #c8cdd6;
+        text-decoration: none;
+        font-size: 0.92rem;
+        font-weight: 500;
+        padding: 8px 13px;
+        border-radius: 8px;
+        transition:
+          color 0.2s,
+          background 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--gold);
+        background: rgba(255, 255, 255, 0.06);
+      }
+      /* Garis emas yang meluncur saat hover / menu aktif */
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 13px;
+        right: 13px;
+        bottom: 4px;
+        height: 2px;
+        border-radius: 2px;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        transform: scaleX(1);
+      }
+      .nav-links a.active {
+        color: var(--gold);
+      }
+
+      .nav-toggle {
+        display: none;
+        background: none;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 8px;
+        color: var(--white);
+        padding: 7px 12px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        font-family: var(--font-body);
+      }
+
+      /* ============================================================
+   HERO
+   ============================================================ */
+      .hero {
+        background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+        color: #f0f2f5;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        /* aksen lingkaran emas samar */
+        content: "";
+        position: absolute;
+        right: -120px;
+        top: -120px;
+        width: 380px;
+        height: 380px;
+        border-radius: 50%;
+        border: 1px solid rgba(207, 161, 68, 0.35);
+        pointer-events: none;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        right: -60px;
+        bottom: -160px;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: rgba(207, 161, 68, 0.07);
+        pointer-events: none;
+      }
+      .hero .wrap {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 48px;
+        align-items: center;
+        padding-top: 72px;
+        padding-bottom: 72px;
+        position: relative;
+        z-index: 1;
+      }
+      .hero-eyebrow {
+        color: var(--gold);
+        font-weight: 600;
+        font-size: 0.95rem;
+        letter-spacing: 0.04em;
+        margin-bottom: 12px;
+      }
+      .hero h1 {
+        font-family: var(--font-display);
+        font-size: clamp(1.8rem, 4vw, 2.65rem);
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.015em;
+        margin-bottom: 14px;
+      }
+      .hero-role {
+        font-size: 1.15rem;
+        color: #c8cdd6;
+        margin-bottom: 18px;
+      }
+      .hero-role strong {
+        color: var(--gold);
+        font-weight: 600;
+      }
+      .hero-bio {
+        color: #aeb6c4;
+        max-width: 54ch;
+        margin-bottom: 32px;
+        font-size: 1rem;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 13px 26px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 0.96rem;
+        text-decoration: none;
+        transition:
+          transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.2s,
+          background 0.2s,
+          border-color 0.2s,
+          color 0.2s;
+      }
+      .btn-primary {
+        background: var(--gold);
+        color: var(--navy);
+        position: relative;
+        overflow: hidden;
+      }
+      /* Efek kilau melintas saat hover */
+      .btn-primary::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -80%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          105deg,
+          transparent,
+          rgba(255, 255, 255, 0.55),
+          transparent
+        );
+        transform: skewX(-20deg);
+        transition: left 0.55s ease;
+      }
+      .btn-primary:hover {
+        background: #dcb05a;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 26px rgba(207, 161, 68, 0.4);
+      }
+      .btn-primary:hover::after {
+        left: 130%;
+      }
+      .btn-primary:active {
+        transform: translateY(-1px);
+      }
+      .btn-ghost {
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        color: var(--white);
+      }
+      .btn-ghost:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+        transform: translateY(-3px);
+      }
+
+      .hero-photo {
+        justify-self: center;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid var(--gold);
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+      }
+      .hero-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Strip statistik */
+      .stats {
+        background: var(--navy-soft);
+        border-top: 1px solid rgba(207, 161, 68, 0.25);
+      }
+      .stats .wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        padding-top: 26px;
+        padding-bottom: 26px;
+      }
+      .stat {
+        text-align: center;
+      }
+      .stat .num {
+        font-family: var(--font-display);
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: var(--gold);
+      }
+      .stat .cap {
+        font-size: 0.85rem;
+        color: #aeb6c4;
+      }
+
+      /* ============================================================
+   SECTION DASAR
+   ============================================================ */
+      .section {
+        padding: 72px 0;
+      }
+      .section.alt {
+        background: var(--white);
+      }
+
+      .section-head {
+        margin-bottom: 40px;
+        max-width: 60ch;
+      }
+      .section-label {
+        display: inline-block;
+        background: var(--gold-soft);
+        color: #8a6a1b;
+        font-size: 0.82rem;
+        font-weight: 600;
+        padding: 4px 14px;
+        border-radius: 999px;
+        margin-bottom: 14px;
+      }
+      .section-title {
+        font-family: var(--font-display);
+        font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+        font-weight: 600;
+        color: var(--navy);
+        line-height: 1.2;
+      }
+      .section-desc {
+        color: var(--muted);
+        margin-top: 10px;
+      }
+
+      /* Sub-judul di dalam section (mis. Akademik / Non-Akademik) */
+      .sub-title {
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--navy);
+        margin: 34px 0 16px;
+        padding-left: 14px;
+        border-left: 3px solid var(--gold);
+        line-height: 1.3;
+      }
+      .sub-title:first-of-type {
+        margin-top: 0;
+      }
+      .sub-note {
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--muted);
+        letter-spacing: 0;
+      }
+
+      /* ============================================================
+   TENTANG
+   ============================================================ */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 24px;
+        align-items: start;
+      }
+      .about-card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 28px 30px;
+        box-shadow: var(--shadow);
+      }
+      .section.alt .about-card {
+        background: var(--paper);
+      }
+      .about-card p + p {
+        margin-top: 14px;
+      }
+      .facts {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .facts li {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 13px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 0.95rem;
+      }
+      .facts li:last-child {
+        border-bottom: none;
+      }
+      .facts .k {
+        color: var(--muted);
+      }
+      .facts .v {
+        font-weight: 600;
+        color: var(--navy);
+        text-align: right;
+      }
+
+      /* ============================================================
+   KARTU (pendidikan / kerja / organisasi)
+   ============================================================ */
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+        gap: 20px;
+      }
+      .card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 26px 28px;
+        box-shadow: var(--shadow);
+        transition:
+          transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.3s,
+          border-color 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      .section.alt .card {
+        background: var(--paper);
+      }
+      /* Garis emas menyala dari kiri saat hover */
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-soft));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-hover);
+        border-color: rgba(207, 161, 68, 0.45);
+      }
+      .card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .card .date-badge {
+        display: inline-block;
+        background: var(--gold-soft);
+        color: #8a6a1b;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 3px 12px;
+        border-radius: 999px;
+        margin-bottom: 12px;
+      }
+      .card h3 {
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--navy);
+        line-height: 1.3;
+      }
+      .card .org {
+        color: var(--gold);
+        font-weight: 600;
+        font-size: 0.92rem;
+        margin-top: 3px;
+      }
+      .card .desc {
+        margin-top: 12px;
+        font-size: 0.94rem;
+        color: var(--text);
+      }
+      .card .desc ul {
+        margin: 8px 0 0 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        color: var(--muted);
+      }
+
+      /* ============================================================
+   KETERAMPILAN
+   ============================================================ */
+      .skill-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+        gap: 20px;
+      }
+      .skill-box {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 24px 26px;
+        box-shadow: var(--shadow);
+      }
+      .section.alt .skill-box {
+        background: var(--paper);
+      }
+      .skill-box h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .skill-box h3 .swatch {
+        width: 12px;
+        height: 12px;
+        border-radius: 3px;
+        background: var(--gold);
+      }
+      /* Label penanda fokus utama */
+      .tag-strong {
+        margin-left: auto;
+        background: var(--gold);
+        color: var(--navy);
+        font-family: var(--font-body);
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        padding: 3px 9px;
+        border-radius: 999px;
+      }
+      .chips {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .chips li {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 6px 15px;
+        font-size: 0.88rem;
+        font-weight: 500;
+        transition:
+          border-color 0.2s,
+          color 0.2s;
+      }
+      .section.alt .chips li {
+        background: var(--white);
+      }
+      .chips li:hover {
+        border-color: var(--gold);
+        color: var(--navy);
+      }
+
+      /* ============================================================
+   PRESTASI
+   ============================================================ */
+      .achievement {
+        display: flex;
+        gap: 18px;
+        align-items: flex-start;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px 26px;
+        box-shadow: var(--shadow);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .section.alt .achievement {
+        background: var(--paper);
+      }
+      .achievement:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+      }
+      .achievement .medal {
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: var(--gold-soft);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .achievement .medal svg {
+        width: 24px;
+        height: 24px;
+        stroke: #8a6a1b;
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .achievement h3 {
+        font-size: 1.02rem;
+        font-weight: 700;
+        color: var(--navy);
+      }
+      .achievement p {
+        font-size: 0.9rem;
+        color: var(--muted);
+        margin-top: 2px;
+      }
+
+      /* ============================================================
+   SERTIFIKAT — galeri + lightbox
+   ============================================================ */
+      .cert-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
+        gap: 20px;
+      }
+      /* Portofolio: sub-bagian desain dibuat lebih dominan (kartu lebih besar) */
+      .cert-grid.porto-design {
+        grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+      }
+      .cert-grid.porto-design .cert-thumb {
+        aspect-ratio: 4 / 3;
+      }
+
+      /* Slot karya yang belum diisi - border putus-putus */
+      .cert-card-empty {
+        border-style: dashed;
+        border-color: rgba(207, 161, 68, 0.5);
+        background: transparent;
+        box-shadow: none;
+      }
+      .cert-card-empty:hover {
+        transform: none;
+        box-shadow: none;
+        border-color: rgba(207, 161, 68, 0.7);
+      }
+      .cert-card-empty .cert-thumb {
+        background: var(--paper);
+      }
+      .cert-card-empty .cert-info h3 {
+        color: var(--muted);
+      }
+
+      /* Catatan di bawah daftar karya */
+      .porto-note {
+        margin-top: 26px;
+        padding: 14px 18px;
+        border-left: 3px solid var(--gold);
+        background: var(--white);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+      .section.alt .porto-note {
+        background: var(--paper);
+      }
+      .cert-card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        cursor: zoom-in;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        text-align: left;
+        padding: 0;
+        font-family: inherit;
+      }
+      .cert-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-hover);
+      }
+      .cert-thumb {
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+      }
+      .cert-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+      }
+      .cert-card:hover .cert-thumb img {
+        transform: scale(1.04);
+      }
+      .cert-info {
+        padding: 14px 18px 16px;
+      }
+      .cert-info h3 {
+        font-size: 0.98rem;
+        font-weight: 600;
+        color: var(--navy);
+        line-height: 1.35;
+      }
+      .cert-info p {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-top: 3px;
+      }
+      .cert-hint {
+        font-size: 0.8rem;
+        color: var(--gold);
+        font-weight: 600;
+        margin-top: 8px;
+        display: none; /* muncul hanya jika JS aktif */
+      }
+      .js-on .cert-hint {
+        display: block;
+      }
+
+      /* Lightbox */
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        background: rgba(15, 22, 38, 0.92);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 32px;
+        cursor: zoom-out;
+      }
+      .lightbox.open {
+        display: flex;
+      }
+      .lightbox img {
+        max-width: min(960px, 92vw);
+        max-height: 88vh;
+        border-radius: 10px;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+      }
+      .lightbox .close-hint {
+        position: absolute;
+        bottom: 22px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #aeb6c4;
+        font-size: 0.88rem;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 6px 16px;
+        border-radius: 999px;
+      }
+
+      /* ============================================================
+   KONTAK
+   ============================================================ */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr));
+        gap: 16px;
+        margin-bottom: 36px;
+      }
+      .contact-item {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 20px 22px;
+        text-decoration: none;
+        box-shadow: var(--shadow);
+        transition:
+          transform 0.2s,
+          border-color 0.2s;
+        display: block;
+      }
+      .section.alt .contact-item {
+        background: var(--paper);
+      }
+      .contact-item:hover {
+        transform: translateY(-3px);
+        border-color: var(--gold);
+      }
+      .contact-item .k {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--gold);
+        margin-bottom: 4px;
+      }
+      .contact-item .v {
+        font-weight: 600;
+        color: var(--navy);
+        font-size: 0.96rem;
+        word-break: break-word;
+      }
+      .cta-band {
+        background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+        border-radius: var(--radius);
+        padding: 40px 44px;
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+      .cta-band h3 {
+        font-family: var(--font-display);
+        font-size: 1.45rem;
+        font-weight: 600;
+      }
+      .cta-band p {
+        color: #aeb6c4;
+        margin-top: 6px;
+        max-width: 46ch;
+      }
+
+      /* ============================================================
+   FOOTER
+   ============================================================ */
+      footer.site-footer {
+        background: var(--navy);
+        color: #8a93a3;
+        padding: 28px 0;
+        font-size: 0.88rem;
+      }
+      footer.site-footer .wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      footer.site-footer a {
+        color: var(--gold);
+        text-decoration: none;
+      }
+      footer.site-footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* ============================================================
+   ANIMASI
+   ============================================================ */
+
+      /* Elemen hero masuk berurutan saat halaman dibuka */
+      @keyframes heroIn {
+        from {
+          opacity: 0;
+          transform: translateY(26px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes heroPhotoIn {
+        from {
+          opacity: 0;
+          transform: scale(0.72) rotate(-6deg);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) rotate(0deg);
+        }
+      }
+      @keyframes pulseGlow {
+        0%,
+        100% {
+          box-shadow:
+            0 16px 48px rgba(0, 0, 0, 0.35),
+            0 0 0 0 rgba(207, 161, 68, 0.35);
+        }
+        50% {
+          box-shadow:
+            0 16px 48px rgba(0, 0, 0, 0.35),
+            0 0 0 14px rgba(207, 161, 68, 0);
+        }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .hero-eyebrow {
+          animation: heroIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+        }
+        .hero h1 {
+          animation: heroIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+        }
+        .hero-role {
+          animation: heroIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.28s both;
+        }
+        .hero-bio {
+          animation: heroIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+        }
+        .hero-actions {
+          animation: heroIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.52s both;
+        }
+        .hero-photo {
+          animation:
+            heroPhotoIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both,
+            pulseGlow 2.8s ease-in-out 1.2s 2 both;
+        }
+        .stat {
+          animation: heroIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        .stat:nth-child(1) {
+          animation-delay: 0.55s;
+        }
+        .stat:nth-child(2) {
+          animation-delay: 0.68s;
+        }
+        .stat:nth-child(3) {
+          animation-delay: 0.81s;
+        }
+        .stat:nth-child(4) {
+          animation-delay: 0.94s;
+        }
+
+        /* Scroll reveal — jeda bertahap per kelompok */
+        .reveal {
+          opacity: 0;
+          transform: translateY(26px);
+          transition:
+            opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+            transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+          transition-delay: var(--d, 0ms);
+        }
+        .reveal.in {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* ============================================================
+   RESPONSIF
+   ============================================================ */
+      @media (max-width: 900px) {
+        .hero .wrap {
+          grid-template-columns: 1fr;
+          text-align: center;
+          padding-top: 56px;
+          padding-bottom: 56px;
+        }
+        .hero-bio {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .hero-actions {
+          justify-content: center;
+        }
+        .hero-photo {
+          grid-row: 1;
+        }
+        .hero::before,
+        .hero::after {
+          display: none;
+        }
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+        .stats .wrap {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 22px;
+        }
+        .cta-band {
+          padding: 32px 28px;
+        }
+
+        .nav-toggle {
+          display: block;
+        }
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 64px;
+          left: 0;
+          right: 0;
+          background: var(--navy);
+          flex-direction: column;
+          padding: 12px 20px 20px;
+          border-bottom: 1px solid rgba(207, 161, 68, 0.25);
+        }
+        .nav-links.open {
+          display: flex;
+        }
+        .nav-links a {
+          display: block;
+          padding: 12px 10px;
+        }
+      }
+      @media (max-width: 520px) {
+        .wrap {
+          padding: 0 18px;
+        }
+        .section {
+          padding: 48px 0;
+        }
+        .stats .wrap {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 18px;
+        }
+        .hero .wrap {
+          padding-top: 44px;
+          padding-bottom: 48px;
+          gap: 32px;
+        }
+        .hero-photo {
+          width: 170px;
+          height: 170px;
+        }
+        .hero-bio {
+          font-size: 0.96rem;
+        }
+        .hero-actions {
+          width: 100%;
+        }
+        .hero-actions .btn {
+          flex: 1;
+          text-align: center;
+          padding: 13px 16px;
+        }
+        .about-card,
+        .card,
+        .skill-box,
+        .achievement {
+          padding: 20px 20px;
+        }
+        .cert-info {
+          padding: 12px 14px 14px;
+        }
+        .cta-band {
+          padding: 28px 22px;
+          text-align: center;
+        }
+        .cta-band .btn {
+          width: 100%;
+          text-align: center;
+        }
+        .card-grid,
+        .skill-grid,
+        .cert-grid,
+        .contact-grid {
+          gap: 14px;
+        }
+      }
+      @media (max-width: 360px) {
+        .stats .wrap {
+          grid-template-columns: 1fr 1fr;
+        }
+        .stat .num {
+          font-size: 1.45rem;
+        }
+      }
+
+      /* ============================================================
+   CETAK
+   ============================================================ */
+      @media print {
+        .navbar,
+        .hero-actions,
+        .cta-band,
+        .cert-hint {
+          display: none !important;
+        }
+        .hero {
+          background: var(--navy) !important;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .section {
+          padding: 28px 0;
+          break-inside: avoid;
+        }
+        .card,
+        .cert-card,
+        .achievement {
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar" aria-label="Navigasi utama">
+      <div class="wrap">
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          Menu ☰
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#pendidikan">Pendidikan</a></li>
+          <li><a href="#pengalaman">Pengalaman</a></li>
+          <li><a href="#organisasi">Organisasi</a></li>
+          <li><a href="#keterampilan">Keterampilan</a></li>
+          <li><a href="#prestasi">Prestasi</a></li>
+          <li><a href="#portofolio">Portofolio</a></li>
+          <li><a href="#sertifikat">Sertifikat</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <header class="hero" id="beranda">
+      <div class="wrap">
+        <div>
+          <p class="hero-eyebrow">Curriculum Vitae</p>
+          <!-- UBAH: nama lengkap -->
+          <h1>AHMAD BARRY MAHARDIKA</h1>
+          <!-- UBAH: profesi -->
+          <p class="hero-role">
+            Mahasiswa <strong>Teknik Informatika</strong> —
+            <strong>Desain Grafis</strong> &amp; Web Development
+          </p>
+          <!-- UBAH: ringkasan singkat -->
+          <p class="hero-bio">
+            Fokus utama saya ada di desain grafis — Figma, Canva, dan Adobe
+            Photoshop untuk poster, banner, UI/UX, dan aset visual. Coding
+            menjadi pendukung: HTML, CSS, JavaScript, TypeScript, serta React
+            Native. Aktif berprestasi di bidang akademik maupun non-akademik,
+            dan terbiasa bekerja dalam tim dengan standar ketelitian tinggi.
+          </p>
+          <div class="hero-actions">
+            <!-- UBAH: hapus atau ganti link ini dengan file CV PDF kamu -->
+            <a class="btn btn-primary" href="#kontak">Hubungi Saya</a>
+            <a class="btn btn-ghost" href="#portofolio">Lihat Portofolio</a>
+          </div>
+        </div>
+        <!-- UBAH: ganti src dengan nama file foto kamu (mis. assets/foto.jpg) -->
+        <div class="hero-photo">
+          <img src="assets/foto.svg" alt="Foto profil Ahmad Barry Mahardika" />
+        </div>
+      </div>
+    </header>
+
+    <!-- Strip statistik singkat -->
+    <div class="stats">
+      <div class="wrap">
+        <!-- UBAH: angka & keterangan sesuai data kamu -->
+        <div class="stat">
+          <div class="num">3,68</div>
+          <div class="cap">IPK Terakhir</div>
+        </div>
+        <div class="stat">
+          <div class="num">5</div>
+          <div class="cap">Semester Berjalan</div>
+        </div>
+        <div class="stat">
+          <div class="num">4</div>
+          <div class="cap">Juara Lomba</div>
+        </div>
+        <div class="stat">
+          <div class="num">3</div>
+          <div class="cap">Semester Beasiswa</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= TENTANG ================= -->
+    <section class="section" id="tentang">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">Profil</span>
+          <h2 class="section-title">Tentang Saya</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-card reveal">
+            <!-- UBAH: ringkasan diri -->
+            <p>
+              Saya mahasiswa Teknik Informatika semester 5 dengan IPK 3,68.
+              Kekuatan saya berada di bidang desain grafis — saya mahir
+              menggunakan Figma, Canva, dan Adobe Photoshop untuk mengerjakan
+              poster, banner, desain UI/UX, editing foto, sampai identitas
+              visual. Kemampuan programming saya menjadi pelengkap: HTML, CSS,
+              JavaScript, TypeScript, React Native, serta dasar C dan Java.
+            </p>
+            <p>
+              Di sisi akademik, saya lolos seleksi Beasiswa Bakti BCA selama
+              tiga semester berturut-turut dan aktif mengikuti lomba kreativitas
+              tingkat kampus. Di sisi non-akademik, saya meraih Juara 1 pada
+              Rector Cup Basket 2024 dan Rector Cup PKM 2024. Kombinasi desain,
+              teknologi, dan prestasi ini membentuk cara kerja saya: teliti,
+              konsisten, dan mampu mengubah ide menjadi karya nyata.
+            </p>
+          </div>
+          <div class="about-card reveal">
+            <!-- UBAH: data diri singkat -->
+            <ul class="facts">
+              <li>
+                <span class="k">Tempat, Tgl Lahir</span>
+                <span class="v">Amuntai, 8 Mei 2005</span>
+              </li>
+              <li>
+                <span class="k">Jenis Kelamin</span>
+                <span class="v">Laki-laki</span>
+              </li>
+              <li>
+                <span class="k">Status</span>
+                <span class="v">Mahasiswa Aktif</span>
+              </li>
+              <li>
+                <span class="k">Bahasa</span>
+                <span class="v">Indonesia, Inggris (dasar)</span>
+              </li>
+              <li>
+                <span class="k">Fokus Utama</span>
+                <span class="v">Desain Grafis &amp; UI/UX</span>
+              </li>
+              <li>
+                <span class="k">Pendamping</span>
+                <span class="v">Web Dev &amp; Mobile (React Native)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PENDIDIKAN ================= -->
+    <section class="section alt" id="pendidikan">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">Akademik</span>
+          <h2 class="section-title">Riwayat Pendidikan</h2>
+          <p class="section-desc">
+            Rekam jejak akademik saya di Universitas Muhammadiyah Malang.
+          </p>
+        </div>
+        <div class="card-grid">
+          <!-- UBAH: tambah/hapus kartu sesuai riwayat -->
+          <article class="card reveal">
+            <span class="date-badge">2023 — Sekarang</span>
+            <h3>S1 Teknik Informatika</h3>
+            <p class="org">Universitas Muhammadiyah Malang</p>
+            <div class="desc">
+              <ul>
+                <li>IPK: 3,68 / 4,00 (semester 5)</li>
+                <li>Penerima Beasiswa Bakti BCA (Semester 3–5)</li>
+                <li>
+                  Aktif mengikuti lomba kreativitas tingkat kampus (Rector Cup)
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PENGALAMAN KERJA ================= -->
+    <section class="section" id="pengalaman">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">Karier</span>
+          <h2 class="section-title">Pengalaman Kerja</h2>
+          <p class="section-desc">
+            Pengalaman profesional di lingkungan kerja maupun proyek lepas.
+          </p>
+        </div>
+        <div class="card-grid">
+          <!-- UBAH: tambah/hapus kartu; hapus section ini bila belum ada pengalaman kerja -->
+          <article class="card reveal">
+            <span class="date-badge">2026 — Sekarang</span>
+            <h3>Driver Part-Time</h3>
+            <p class="org">ShopeeFood</p>
+            <div class="desc">
+              <ul>
+                <li>
+                  Mengantar pesanan pelanggan di area Malang dan sekitarnya
+                  dengan waktu yang fleksibel.
+                </li>
+                <li>
+                  Menjaga kualitas layanan dan kepuasan pelanggan di setiap
+                  pengantaran.
+                </li>
+                <li>
+                  Bekerja secara mandiri dengan target dan jam kerja yang dapat
+                  diatur sendiri.
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="card reveal">
+            <span class="date-badge">2024</span>
+            <h3>Proyek Mandiri — Web &amp; Desain</h3>
+            <p class="org">Proyek pribadi / akademik</p>
+            <div class="desc">
+              <ul>
+                <li>
+                  Membangun website responsif dengan HTML, CSS, dan JavaScript.
+                </li>
+                <li>
+                  Menyusun aset visual poster dan banner menggunakan Canva serta
+                  Photoshop.
+                </li>
+                <li>Merancang antarmuka dan prototype desain pada Figma.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ORGANISASI ================= -->
+    <section class="section alt" id="organisasi">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">Kegiatan</span>
+          <h2 class="section-title">Pengalaman Organisasi &amp; Kegiatan</h2>
+          <p class="section-desc">
+            Keterlibatan dalam kegiatan kampus dan kompetisi yang membentuk
+            kemampuan kerja sama, disiplin, dan ketangguhan mental.
+          </p>
+        </div>
+        <div class="card-grid">
+          <!-- UBAH: tambah/hapus kartu sesuai riwayat -->
+          <article class="card reveal">
+            <span class="date-badge">2024 — 2025</span>
+            <h3>Finalis &amp; Juara Rector Cup</h3>
+            <p class="org">Lomba Internal — Universitas Muhammadiyah Malang</p>
+            <div class="desc">
+              <ul>
+                <li>
+                  Juara 1 cabang PKM (2024) pada kompetisi kreativitas tingkat
+                  kampus.
+                </li>
+                <li>Juara 1 (2024) dan Juara 3 (2025) cabang Basket.</li>
+                <li>Berlatih bersama tim secara rutin di luar jam kuliah.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="card reveal">
+            <span class="date-badge">2025</span>
+            <h3>Peserta POMPROV</h3>
+            <p class="org">Pekan Olahraga Mahasiswa Provinsi — Cabang Basket</p>
+            <div class="desc">
+              <ul>
+                <li>
+                  Mewakili universitas dalam kompetisi olahraga tingkat
+                  provinsi.
+                </li>
+                <li>Menghadapi tim antar-universitas di luar provinsi asal.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= KETERAMPILAN ================= -->
+    <section class="section" id="keterampilan">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">Kompetensi</span>
+          <h2 class="section-title">Keterampilan</h2>
+          <p class="section-desc">
+            Kompetensi teknis dan kemampuan pendukung yang saya kembangkan
+            secara konsisten.
+          </p>
+        </div>
+        <div class="skill-grid">
+          <!-- UBAH: ganti nama kategori & isi keahlian -->
+          <div class="skill-box reveal">
+            <h3>
+              <span class="swatch"></span>Desain Grafis
+              <span class="tag-strong">FOKUS</span>
+            </h3>
+            <ul class="chips">
+              <li>Figma</li>
+              <li>Canva</li>
+              <li>Adobe Photoshop</li>
+              <li>UI/UX Design</li>
+              <li>Poster &amp; Banner</li>
+              <li>Desain Sosial Media</li>
+            </ul>
+          </div>
+          <div class="skill-box reveal">
+            <h3><span class="swatch"></span>Bahasa Pemrograman</h3>
+            <ul class="chips">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>TSX / React</li>
+              <li>C</li>
+              <li>Java</li>
+              <li>Python</li>
+            </ul>
+          </div>
+          <div class="skill-box reveal">
+            <h3><span class="swatch"></span>Alat &amp; Teknologi</h3>
+            <ul class="chips">
+              <li>MySQL</li>
+              <li>Git</li>
+              <li>Bootstrap</li>
+              <li>VS Code</li>
+              <li>Microsoft Office</li>
+              <li>React Native</li>
+            </ul>
+          </div>
+          <div class="skill-box reveal">
+            <h3><span class="swatch"></span>Soft Skills</h3>
+            <ul class="chips">
+              <li>Bekerja dalam tim</li>
+              <li>Komunikasi</li>
+              <li>Manajemen waktu</li>
+              <li>Problem solving</li>
+              <li>Adaptif</li>
+              <li>Disiplin</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRESTASI ================= -->
+    <section class="section alt" id="prestasi">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">Penghargaan</span>
+          <h2 class="section-title">Prestasi</h2>
+          <p class="section-desc">
+            Pencapaian di bidang akademik maupun non-akademik yang saya raih
+            selama masa kuliah.
+          </p>
+        </div>
+
+        <h3 class="sub-title reveal">Akademik</h3>
+        <div class="card-grid">
+          <div class="achievement reveal">
+            <div class="medal" aria-hidden="true">
+              <!-- ikon medali -->
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="9" r="5.5" />
+                <path d="M9 13.5 7 22l5-3 5 3-2-8.5" />
+              </svg>
+            </div>
+            <div>
+              <h3>Juara 1 — Rector Cup PKM 2024</h3>
+              <p>
+                Universitas Muhammadiyah Malang · 2024 · Lomba kreativitas
+                tingkat kampus
+              </p>
+            </div>
+          </div>
+          <div class="achievement reveal">
+            <div class="medal" aria-hidden="true">
+              <!-- ikonSanto -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3 3 7.5 12 12l9-4.5L12 3Z" />
+                <path d="M7 9.5V15c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5V9.5" />
+              </svg>
+            </div>
+            <div>
+              <h3>Beasiswa Bakti BCA — Semester 3, 4 &amp; 5</h3>
+              <p>
+                Program Beasiswa Prestasi · 2024–2026 · Tiga semester
+                berturut-turut
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub-title reveal">Non-Akademik</h3>
+        <div class="card-grid">
+          <div class="achievement reveal">
+            <div class="medal" aria-hidden="true">
+              <!-- ikon trofi -->
+              <svg viewBox="0 0 24 24">
+                <path d="M8 4h8v6a4 4 0 0 1-8 0V4Z" />
+                <path d="M8 5H5v2a3 3 0 0 0 3 3" />
+                <path d="M16 5h3v2a3 3 0 0 1-3 3" />
+                <path d="M12 14v3" />
+                <path d="M9 20h6" />
+                <path d="M10 17h4v3h-4z" />
+              </svg>
+            </div>
+            <div>
+              <h3>Juara 1 — Rector Cup Basket 2024</h3>
+              <p>
+                Universitas Muhammadiyah Malang · 2024 · Lomba olahraga tingkat
+                kampus
+              </p>
+            </div>
+          </div>
+          <div class="achievement reveal">
+            <div class="medal" aria-hidden="true">
+              <!-- ikon medali -->
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="9" r="5.5" />
+                <path d="M9 13.5 7 22l5-3 5 3-2-8.5" />
+              </svg>
+            </div>
+            <div>
+              <h3>Juara 3 — Rector Cup Basket 2025</h3>
+              <p>
+                Universitas Muhammadiyah Malang · 2025 · Lomba olahraga tingkat
+                kampus
+              </p>
+            </div>
+          </div>
+          <div class="achievement reveal">
+            <div class="medal" aria-hidden="true">
+              <!-- ikon globe -->
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="8.5" />
+                <path d="M3.5 12h17" />
+                <path
+                  d="M12 3.5c2.4 2.3 3.6 5.1 3.6 8.5S14.4 18.2 12 20.5c-2.4-2.3-3.6-5.1-3.6-8.5S9.6 5.8 12 3.5Z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h3>Peserta — POMPROV Cabang Basket</h3>
+              <p>
+                Pekan Olahraga Mahasiswa Provinsi · 2025 · Meng mewakili
+                universitas di tingkat provinsi
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PORTOFOLIO ================= -->
+    <section class="section alt" id="portofolio">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">Karya</span>
+          <h2 class="section-title">Portofolio</h2>
+          <p class="section-desc">
+            Karya desain yang saya kerjakan. Klik gambar untuk pratinjau ukuran
+            penuh.
+          </p>
+        </div>
+
+        <!--
+      UBAH: ganti file gambar di folder "assets/portfolio/" dengan karyamu sendiri (jpg/png)
+      1. Simpan karyamu ke folder "assets/portfolio/"
+      2. Ganti src="assets/portfolio/portofolio-banner.svg" menjadi file kamu
+      3. Ubah judul & keterangan di bawah
+      Untuk menambah kartu: salin satu blok <button ...> ... </button>
+    -->
+        <h3 class="sub-title reveal">
+          Desain Grafis <span class="sub-note">&#8212; fokus utama saya</span>
+        </h3>
+        <div class="cert-grid porto-design">
+          <button class="cert-card reveal" type="button">
+            <div class="cert-thumb">
+              <img
+                src="assets/portfolio/portofolio-banner.svg"
+                alt="Desain banner dan backdrop event"
+              />
+            </div>
+            <div class="cert-info">
+              <h3>Banner &amp; Backdrop Event</h3>
+              <p>
+                Canva &amp; Photoshop &#8212; aset visual acara &amp; organisasi
+              </p>
+              <p class="cert-hint">Klik untuk memperbesar</p>
+            </div>
+          </button>
+          <!-- SLOT KOSONG: ganti gambar & judul di bawah dengan karyamu berikutnya -->
+          <button class="cert-card reveal cert-card-empty" type="button">
+            <div class="cert-thumb">
+              <img
+                src="assets/portfolio/portofolio-kosong.svg"
+                alt="Slot karya desain berikutnya"
+              />
+            </div>
+            <div class="cert-info">
+              <h3>Karya Desain Berikutnya</h3>
+              <p>Sedang dalam proses &#8212; segera hadir</p>
+            </div>
+          </button>
+        </div>
+
+        <p class="porto-note reveal">
+          Portofolio untuk bidang pemrograman web &amp; mobile sedang saya
+          kembangkan dan akan ditambahkan menyusul.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= SERTIFIKAT ================= -->
+    <section class="section" id="sertifikat">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">Verifikasi</span>
+          <h2 class="section-title">Sertifikat</h2>
+          <p class="section-desc">
+            Dokumentasi pendukung setiap prestasi akademik dan non-akademik.
+            Klik gambar untuk pratinjau ukuran penuh.
+          </p>
+        </div>
+        <div class="cert-grid">
+          <!--
+        UBAH: cara memasang sertifikat kamu sendiri
+        1. Simpan file sertifikat (jpg/png) ke folder "sertifikat/"
+        2. Ganti src="sertifikat/nama-file.svg" menjadi file kamu, mis. "sertifikat/bakti-bca.jpg"
+        3. Ubah judul & penerbit di bawah
+        Untuk menambah kartu: salin satu blok <button ...> ... </button>
+      -->
+          <button class="cert-card reveal" type="button">
+            <div class="cert-thumb">
+              <img
+                src="sertifikat/beasiswa-bakti-bca.svg"
+                alt="Sertifikat Beasiswa Bakti BCA"
+              />
+            </div>
+            <div class="cert-info">
+              <h3>Beasiswa Bakti BCA — Sem 3, 4 &amp; 5</h3>
+              <p>Program Beasiswa Prestasi · 2024–2026</p>
+              <p class="cert-hint">Klik untuk memperbesar</p>
+            </div>
+          </button>
+          <button class="cert-card reveal" type="button">
+            <div class="cert-thumb">
+              <img
+                src="sertifikat/rektor-cup-pkm-2024.svg"
+                alt="Sertifikat Juara 1 Rector Cup PKM 2024"
+              />
+            </div>
+            <div class="cert-info">
+              <h3>Juara 1 — Rector Cup PKM 2024</h3>
+              <p>Universitas Muhammadiyah Malang · 2024</p>
+              <p class="cert-hint">Klik untuk memperbesar</p>
+            </div>
+          </button>
+          <button class="cert-card reveal" type="button">
+            <div class="cert-thumb">
+              <img
+                src="sertifikat/rektor-cup-basket-2024.svg"
+                alt="Sertifikat Juara 1 Rector Cup Basket 2024"
+              />
+            </div>
+            <div class="cert-info">
+              <h3>Juara 1 — Rector Cup Basket 2024</h3>
+              <p>Universitas Muhammadiyah Malang · 2024</p>
+              <p class="cert-hint">Klik untuk memperbesar</p>
+            </div>
+          </button>
+          <button class="cert-card reveal" type="button">
+            <div class="cert-thumb">
+              <img
+                src="sertifikat/rektor-cup-basket-2025.svg"
+                alt="Sertifikat Juara 3 Rector Cup Basket 2025"
+              />
+            </div>
+            <div class="cert-info">
+              <h3>Juara 3 — Rector Cup Basket 2025</h3>
+              <p>Universitas Muhammadiyah Malang · 2025</p>
+              <p class="cert-hint">Klik untuk memperbesar</p>
+            </div>
+          </button>
+          <button class="cert-card reveal" type="button">
+            <div class="cert-thumb">
+              <img
+                src="sertifikat/pomprov-basket.svg"
+                alt="Sertifikat Peserta POMPROV Cabang Basket"
+              />
+            </div>
+            <div class="cert-info">
+              <h3>Peserta — POMPROV Cabang Basket</h3>
+              <p>Pekan Olahraga Mahasiswa Provinsi · 2025</p>
+              <p class="cert-hint">Klik untuk memperbesar</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= KONTAK ================= -->
+    <section class="section alt" id="kontak">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-label">Terhubung</span>
+          <h2 class="section-title">Kontak</h2>
+          <p class="section-desc">
+            Saya terbuka untuk peluang magang, pekerjaan, maupun kolaborasi.
+            Silakan hubungi saya melalui kanal berikut.
+          </p>
+        </div>
+        <!-- UBAH: sesuaikan data kontak -->
+        <div class="contact-grid reveal">
+          <a class="contact-item" href="mailto:barrymahardikaa@gmail.com">
+            <p class="k">Email Pribadi</p>
+            <p class="v">barrymahardikaa@gmail.com</p>
+          </a>
+          <a
+            class="contact-item"
+            href="mailto:akbarimahardika@webmail.umm.ac.id"
+          >
+            <p class="k">Email Kampus</p>
+            <p class="v">akbarimahardika@webmail.umm.ac.id</p>
+          </a>
+          <a class="contact-item" href="tel:+6281253307906">
+            <p class="k">Telepon / WA</p>
+            <p class="v">+62 812-5330-7906</p>
+          </a>
+          <a
+            class="contact-item"
+            href="https://www.linkedin.com/in/barrymahardika"
+            target="_blank"
+            rel="noopener"
+          >
+            <p class="k">LinkedIn</p>
+            <p class="v">linkedin.com/in/barrymahardika</p>
+          </a>
+          <a
+            class="contact-item"
+            href="https://github.com/BarryMahardikaaa"
+            target="_blank"
+            rel="noopener"
+          >
+            <p class="k">GitHub</p>
+            <p class="v">github.com/BarryMahardikaaa</p>
+          </a>
+        </div>
+        <div class="cta-band reveal">
+          <div>
+            <h3>Terbuka untuk kesempatan magang &amp; karier awal</h3>
+            <p>
+              Saya siap berkontribusi di bidang pemrograman maupun desain
+              visual, dan terus berkembang di lingkungan kerja profesional.
+              Silakan hubungi saya untuk diskusi lebih lanjut.
+            </p>
+          </div>
+          <!-- UBAH: ganti dengan link WhatsApp kamu, format: https://wa.me/6281234567890 -->
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/6281253307906"
+            target="_blank"
+            rel="noopener"
+            >Kirim Pesan via WhatsApp</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="wrap">
+        <!-- UBAH: nama -->
+        <p>© 2026 Ahmad Barry Mahardika. Semua hak dilindungi.</p>
+        <p>CV ini disusun untuk keperluan pelamaran magang dan pekerjaan</p>
+      </div>
+    </footer>
+
+    <!-- Lightbox sertifikat -->
+    <div
+      class="lightbox"
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Pratinjau sertifikat"
+    >
+      <img src="" alt="Sertifikat ukuran penuh" />
+      <span class="close-hint"
+        >Tekan ESC atau klik di luar gambar untuk menutup</span
+      >
+    </div>
+
+    <script>
+      document.body.classList.add("js-on");
+
+      /* Menu mobile */
+      const navToggle = document.getElementById("navToggle");
+      const navLinks = document.getElementById("navLinks");
+      navToggle.addEventListener("click", () => {
+        const open = navLinks.classList.toggle("open");
+        navToggle.setAttribute("aria-expanded", open);
+      });
+      navLinks.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") {
+          navLinks.classList.remove("open");
+          navToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      /* Lightbox sertifikat */
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = lightbox.querySelector("img");
+      document
+        .querySelectorAll(".cert-card:not(.cert-card-empty)")
+        .forEach((card) => {
+          /* sertifikat + portofolio */
+          card.addEventListener("click", () => {
+            const src = card.querySelector("img").src;
+            const alt = card.querySelector("img").alt;
+            lightboxImg.src = src;
+            lightboxImg.alt = alt;
+            lightbox.classList.add("open");
+          });
+        });
+      function closeLightbox() {
+        lightbox.classList.remove("open");
+      }
+      lightbox.addEventListener("click", closeLightbox);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeLightbox();
+      });
+
+      /* Animasi masuk saat di-scroll (sekali saja, dengan jeda bertahap per grup) */
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      if (!reduceMotion && "IntersectionObserver" in window) {
+        /* Beri jeda berurutan untuk elemen dalam satu grup (card-grid, dsb.) */
+        document
+          .querySelectorAll(
+            ".card-grid, .skill-grid, .cert-grid, .contact-grid, .about-grid",
+          )
+          .forEach((group) => {
+            group.querySelectorAll(".reveal").forEach((el, i) => {
+              el.style.setProperty("--d", i * 90 + "ms");
+            });
+          });
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((en) => {
+              if (en.isIntersecting) {
+                en.target.classList.add("in");
+                io.unobserve(en.target);
+              }
+            });
+          },
+          { threshold: 0.12 },
+        );
+        document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+      } else {
+        document
+          .querySelectorAll(".reveal")
+          .forEach((el) => el.classList.add("in"));
+      }
+
+      /* Hitung angka statistik naik dari nol saat terlihat */
+      if ("IntersectionObserver" in window) {
+        const statNums = document.querySelectorAll(".stat .num");
+        const animateCount = (el) => {
+          const raw = el.textContent.trim();
+          /* Angka desimal memakai koma sebagai pemisah (mis. 3,75) */
+          const isDecimal = raw.includes(",");
+          const target = parseFloat(raw.replace(",", "."));
+          if (isNaN(target)) return;
+          if (reduceMotion) return; /* biarkan angka final */
+          const duration = 1200;
+          const start = performance.now();
+          const step = (now) => {
+            const t = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - t, 3); /* ease-out cubic */
+            const val = target * eased;
+            el.textContent = isDecimal
+              ? val.toFixed(2).replace(".", ",")
+              : Math.round(val);
+            if (t < 1) requestAnimationFrame(step);
+            else el.textContent = raw; /* kembali persis ke teks asli */
+          };
+          requestAnimationFrame(step);
+        };
+        const statIO = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((en) => {
+              if (en.isIntersecting) {
+                animateCount(en.target);
+                statIO.unobserve(en.target);
+              }
+            });
+          },
+          { threshold: 0.6 },
+        );
+        statNums.forEach((el) => statIO.observe(el));
+      }
+
+      /* Garis emas di menu navbar mengikuti section yang sedang terlihat */
+      const navAnchors = document.querySelectorAll(".nav-links a");
+      if ("IntersectionObserver" in window) {
+        const sectionFor = new Map();
+        navAnchors.forEach((a) => {
+          const id = a.getAttribute("href").slice(1);
+          const sec = document.getElementById(id);
+          if (sec) sectionFor.set(sec, a);
+        });
+        const spy = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((en) => {
+              const link = sectionFor.get(en.target);
+              if (!link) return;
+              if (en.isIntersecting) {
+                navAnchors.forEach((a) => a.classList.remove("active"));
+                link.classList.add("active");
+              }
+            });
+          },
+          { rootMargin: "-40% 0px -55% 0px" },
+        ); /* aktif saat section di sepertiga tengah layar */
+        sectionFor.forEach((_, sec) => spy.observe(sec));
+      }
+    </script>
+  </body>
+</html>

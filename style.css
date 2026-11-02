@@ -1,0 +1,681 @@
+/* ============================================================
+   CV Alya Rahmawati — stylesheet
+   Konsep: lembar dokumen A4 di atas meja, sidebar hijau pinus,
+   aksen emas, tipografi Fraunces + Plus Jakarta Sans.
+   ============================================================
+
+   Daftar isi:
+   1. Variabel warna (tema terang & gelap)
+   2. Dasar / reset
+   3. Toolbar
+   4. Lembar & layout dua kolom
+   5. Sidebar (foto, kontak, keterampilan, bahasa)
+   6. Kolom utama (judul, bagian, timeline, prestasi, sertifikat)
+   7. Animasi & keadaan hover/fokus
+   8. Responsif (layar kecil)
+   9. Cetak / simpan PDF (A4)
+   10. Aksesibilitas (gerakan berkurang)
+   ============================================================ */
+
+/* ---------- 1. Variabel warna ---------- */
+:root {
+  /* Tema terang */
+  --desk: #e7ebe8;          /* latar "meja" di sekeliling lembar */
+  --sheet: #ffffff;         /* kertas CV */
+  --ink: #232b27;           /* teks utama */
+  --ink-soft: #5c6a63;      /* teks sekunder */
+  --pine: #24473b;          /* sidebar hijau pinus */
+  --pine-deep: #1a342c;     /* hijau lebih gelap (hover) */
+  --on-pine: #dde7e2;       /* teks terang di atas hijau */
+  --on-pine-soft: #a9c0b4;  /* teks redup di atas hijau */
+  --gold: #c59b4b;          /* aksen garis & titik (di kertas) */
+  --gold-ink: #8f6b24;      /* aksen teks (kontras cukup di kertas) */
+  --gold-bright: #dcb665;   /* aksen di atas hijau */
+  --rule: #e4e7e4;          /* garis pemisah tipis */
+  --track: #31523f;         /* bar latar keterampilan (di hijau) */
+  --shadow: rgba(28, 40, 34, 0.18);
+  --focus: #b4883a;
+}
+
+[data-theme="dark"] {
+  --desk: #101413;
+  --sheet: #191f1c;
+  --ink: #e9edea;
+  --ink-soft: #9aa8a1;
+  --pine: #142a22;
+  --pine-deep: #0f211b;
+  --on-pine: #e2eae5;
+  --on-pine-soft: #93aa9d;
+  --gold: #c59b4b;
+  --gold-ink: #d8b36a;
+  --gold-bright: #dcb665;
+  --rule: #2a332e;
+  --track: #27453a;
+  --shadow: rgba(0, 0, 0, 0.45);
+  --focus: #dcb665;
+}
+
+/* ---------- 2. Dasar / reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--desk);
+  padding: 48px 24px 72px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Fokus keyboard yang terlihat jelas */
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* ---------- 3. Toolbar ---------- */
+.toolbar {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.tool-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.tool-btn:hover {
+  background: var(--desk);
+}
+
+.tool-btn:active {
+  transform: translateY(1px);
+}
+
+/* Ikon tema: tampilkan sesuai tema aktif */
+.icon-sun { display: none; }
+[data-theme="dark"] .icon-moon { display: none; }
+[data-theme="dark"] .icon-sun { display: block; }
+
+/* ---------- 4. Lembar & layout dua kolom ---------- */
+.sheet {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  max-width: 980px;
+  margin: 0 auto;
+  background: var(--sheet);
+  border-radius: 6px;
+  overflow: hidden; /* membulatkan sudut sidebar */
+  box-shadow: 0 12px 40px var(--shadow);
+}
+
+.content {
+  padding: 48px 52px 32px;
+  min-width: 0; /* mencegah teks panjang merusak grid */
+}
+
+/* ---------- 5. Sidebar ---------- */
+.sidebar {
+  background: var(--pine);
+  color: var(--on-pine);
+  padding: 44px 30px 36px;
+}
+
+.photo {
+  width: 128px;
+  height: 128px;
+  margin: 0 auto 34px;
+  border-radius: 50%;
+  background: var(--pine-deep);
+  border: 3px solid var(--gold-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.photo svg {
+  width: 58%;
+  height: 58%;
+  color: var(--on-pine-soft);
+}
+
+/* Jika memakai foto asli: */
+.photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sidebar-block + .sidebar-block {
+  margin-top: 30px;
+}
+
+.sidebar-heading {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.02rem;
+  font-weight: 600;
+  font-optical-sizing: auto;
+  color: var(--gold-bright);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(220, 182, 101, 0.35);
+}
+
+/* Kontak */
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.83rem;
+  line-height: 1.45;
+  margin-bottom: 11px;
+}
+
+.contact-list svg {
+  flex: none;
+  margin-top: 3px;
+  color: var(--gold-bright);
+}
+
+.contact-list a {
+  word-break: break-all; /* email/URL panjang tidak meluber */
+}
+
+.contact-list a:hover {
+  color: var(--gold-bright);
+}
+
+/* Keterampilan (bar) */
+.skill {
+  margin-bottom: 13px;
+}
+
+.skill-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.83rem;
+  margin-bottom: 5px;
+}
+
+.skill-name {
+  font-weight: 600;
+}
+
+.skill-value {
+  font-size: 0.72rem;
+  color: var(--on-pine-soft);
+}
+
+.skill-track {
+  height: 6px;
+  background: var(--track);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skill-bar {
+  display: block;
+  height: 100%;
+  width: 0;                /* diisi lewat JavaScript saat terlihat */
+  border-radius: 3px;
+  background: var(--gold-bright);
+  transition: width 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.skill-bar.filled {
+  width: var(--pct);
+}
+
+/* Chip keahlian lunak */
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.chip-list li {
+  font-size: 0.76rem;
+  font-weight: 500;
+  padding: 4px 11px;
+  border: 1px solid rgba(221, 231, 226, 0.35);
+  border-radius: 999px;
+  color: var(--on-pine);
+}
+
+/* Bahasa (titik level) */
+.lang-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.83rem;
+  margin-bottom: 10px;
+}
+
+.dots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold-bright);
+}
+
+.dot.filled {
+  background: var(--gold-bright);
+}
+
+/* ---------- 6. Kolom utama ---------- */
+.cv-header {
+  margin-bottom: 34px;
+}
+
+.cv-name {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(2rem, 4.5vw, 2.7rem);
+  font-weight: 650;
+  font-optical-sizing: auto;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.cv-role {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--gold-ink);
+}
+
+.section + .section {
+  margin-top: 30px;
+}
+
+.section-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.18rem;
+  font-weight: 620;
+  font-optical-sizing: auto;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* Penanda kecil sebelum judul bagian — bukan label kapital */
+.section-title::before {
+  content: "";
+  flex: none;
+  width: 10px;
+  height: 10px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+
+.section-body {
+  color: var(--ink-soft);
+  max-width: 62ch; /* garis tidak terlalu panjang */
+}
+
+/* Timeline (pendidikan / kerja / organisasi) */
+.timeline {
+  border-left: 2px solid var(--rule);
+  margin-left: 6px;
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 118px 1fr;
+  gap: 14px;
+  padding: 0 0 22px 22px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Titik penanda di garis timeline */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -6.5px;          /* menimpa garis (2px border + 5px radius) */
+  top: 6px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--sheet);
+  border: 2.5px solid var(--gold);
+}
+
+.timeline-year {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gold-ink);
+  padding-top: 1px;
+}
+
+.timeline-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.timeline-org {
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+
+.timeline-desc {
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  margin-top: 6px;
+  max-width: 58ch;
+}
+
+/* Prestasi */
+.achieve-item {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.achieve-item:first-child {
+  padding-top: 0;
+}
+
+.achieve-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.achieve-year {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gold-ink);
+  padding-top: 1px;
+}
+
+.achieve-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.achieve-org {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin-top: 1px;
+}
+
+/* Sertifikat */
+.cert-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+}
+
+.cert-item {
+  padding-left: 14px;
+  border-left: 2px solid var(--gold);
+}
+
+.cert-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.cert-meta {
+  font-size: 0.79rem;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+
+/* Footer */
+.cv-footer {
+  margin-top: 40px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- 7. Hover ---------- */
+.timeline-item:hover .timeline-title,
+.achieve-item:hover .achieve-title {
+  color: var(--gold-ink);
+  transition: color 0.15s ease;
+}
+
+/* ---------- 8. Responsif ---------- */
+@media (max-width: 820px) {
+  body {
+    padding: 20px 12px 48px;
+  }
+
+  .toolbar {
+    position: static;
+    justify-content: flex-end;
+    margin: 0 auto 14px;
+    max-width: 560px;
+  }
+
+  .sheet {
+    grid-template-columns: 1fr;
+  }
+
+  /* Foto + identitas singkat di versi sempit */
+  .photo {
+    margin-bottom: 24px;
+  }
+
+  .content {
+    padding: 34px 26px 26px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .cert-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  body {
+    padding: 0 0 32px;
+  }
+
+  .sheet {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .sidebar {
+    padding: 34px 22px 28px;
+  }
+
+  .content {
+    padding: 28px 20px 22px;
+  }
+
+  .tool-btn--label span,
+  #print-btn {
+    font-size: 12px;
+  }
+}
+
+/* ---------- 9. Cetak / simpan PDF (A4) ---------- */
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm 12mm 10mm;
+  }
+
+  /* Paksa tema terang saat mencetak */
+  :root,
+  [data-theme="dark"] {
+    --desk: #ffffff;
+    --sheet: #ffffff;
+    --ink: #111111;
+    --ink-soft: #444444;
+    --pine: #24473b;
+    --pine-deep: #1a342c;
+    --on-pine: #dde7e2;
+    --on-pine-soft: #a9c0b4;
+    --gold: #a8842f;
+    --gold-ink: #7a5c1c;
+    --gold-bright: #dcb665;
+    --rule: #d8d8d8;
+    --track: #31523f;
+    --shadow: none;
+  }
+
+  body {
+    background: none;
+    padding: 0;
+    font-size: 10.5pt;
+    -webkit-print-color-adjust: exact;   /* warna hijau & emas ikut tercetak */
+    print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .sheet {
+    display: grid;
+    grid-template-columns: 58mm 1fr;
+    max-width: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+  }
+
+  .sidebar {
+    padding: 10mm 6mm;
+  }
+
+  .photo {
+    width: 30mm;
+    height: 30mm;
+    margin-bottom: 7mm;
+    border-width: 2px;
+  }
+
+  .sidebar-block + .sidebar-block {
+    margin-top: 6mm;
+  }
+
+  .content {
+    padding: 10mm 10mm 6mm;
+  }
+
+  .cv-name {
+    font-size: 22pt;
+  }
+
+  .cv-header {
+    margin-bottom: 6mm;
+  }
+
+  .section + .section {
+    margin-top: 6mm;
+  }
+
+  .section-title {
+    font-size: 12pt;
+    margin-bottom: 3.5mm;
+  }
+
+  /* Bar keterampilan terisi penuh di cetak */
+  .skill-bar {
+    width: var(--pct);
+  }
+
+  /* Item timeline tidak terbelah dua halaman */
+  .timeline-item,
+  .achieve-item,
+  .cert-item {
+    break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+/* ---------- 10. Aksesibilitas: hormati pengaturan gerakan ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .skill-bar {
+    transition: none;
+    width: var(--pct); /* langsung tampil penuh */
+  }
+
+  .tool-btn {
+    transition: none;
+  }
+}

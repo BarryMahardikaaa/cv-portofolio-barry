@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#F6F7F9"/>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#E4E7EC" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid)" opacity="0.55"/>
+  <rect x="30" y="30" width="740" height="540" rx="14" fill="none" stroke="#CFA144" stroke-width="2" stroke-dasharray="10 8" opacity="0.6"/>
+  <circle cx="400" cy="240" r="54" fill="none" stroke="#CFA144" stroke-width="2.5" opacity="0.7"/>
+  <path d="M400 216v48M376 240h48" stroke="#CFA144" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+  <text x="400" y="348" font-family="Georgia, serif" font-size="32" fill="#16233B" text-anchor="middle">Karya Desain Berikutnya</text>
+  <text x="400" y="390" font-family="Arial, sans-serif" font-size="18" fill="#5B6472" text-anchor="middle">Sedang dalam proses &#8212; segera hadir</text>
+  <text x="400" y="432" font-family="Arial, sans-serif" font-size="15" fill="#8A93A3" text-anchor="middle">Poster &#183; Media Sosial &#183; UI/UX</text>
+</svg>
