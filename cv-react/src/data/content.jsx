@@ -245,7 +245,7 @@ export const portfolio = {
       Desain Grafis <span className="sub-note">- fokus utama saya</span>
     </>
   ),
-  note: "Portofolio untuk bidang pemrograman web & mobile sedang saya kembangkan dan akan ditambahkan menyusul.",
+  note: "Portofolio yang lain menyusul.",
   items: [
     {
       src: "assets/portfolio/portofolio-banner.jpg",
