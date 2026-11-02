@@ -59,7 +59,7 @@ export const cardSections = [
     alt: true,
     label: "Akademik",
     title: "Riwayat Pendidikan",
-    desc: "Rekam jejak akademik saya di Universitas Muhammadiyah Malang.",
+    desc: "Rekam jejak akademik saya dari jenjang sekolah hingga perkuliahan.",
     cards: [
       {
         date: "2024 - Sekarang",
@@ -69,6 +69,16 @@ export const cardSections = [
           "IPK: 3,68 / 4,00 (semester 5)",
           "Penerima Beasiswa Bakti BCA ",
           "Aktif mengikuti lomba kreativitas tingkat kampus (Rector Cup)",
+        ],
+      },
+      {
+        date: "2021 - 2024",
+        title: "MA — Jurusan MIPA",
+        org: "MAN 2 Hulu Sungai Utara",
+        points: [
+          "Jurusan MIPA (Matematika dan Ilmu Pengetahuan Alam).",
+          "Anggota Paskibra sekolah.",
+          "Aktif dalam kegiatan Pramuka.",
         ],
       },
     ],
