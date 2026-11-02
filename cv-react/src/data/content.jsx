@@ -26,7 +26,7 @@ export const hero = {
     </>
   ),
   bio: "Fokus utama saya ada di desain grafis - Figma dan Canva untuk poster, banner, dan aset visual. Coding menjadi pendukung: HTML, CSS, JavaScript, TypeScript, serta React Native. Aktif berprestasi di bidang akademik maupun non-akademik, dan terbiasa bekerja dalam tim dengan standar ketelitian tinggi.",
-  photo: "assets/foto.svg",
+  photo: "assets/foto.jpg",
   photoAlt: "Foto profil Ahmad Barry Mahardika",
 };
 
