@@ -62,12 +62,12 @@ export const cardSections = [
     desc: "Rekam jejak akademik saya di Universitas Muhammadiyah Malang.",
     cards: [
       {
-        date: "2023 — Sekarang",
-        title: "S1 Teknik Informatika",
+        date: "2024 - Sekarang",
+        title: "S1 Informatika",
         org: "Universitas Muhammadiyah Malang",
         points: [
           "IPK: 3,68 / 4,00 (semester 5)",
-          "Penerima Beasiswa Bakti BCA (Semester 3–5)",
+          "Penerima Beasiswa Bakti BCA ",
           "Aktif mengikuti lomba kreativitas tingkat kampus (Rector Cup)",
         ],
       },
@@ -81,7 +81,7 @@ export const cardSections = [
     desc: "Pengalaman profesional di lingkungan kerja maupun proyek lepas.",
     cards: [
       {
-        date: "2026 — Sekarang",
+        date: "2026 - Sekarang",
         title: "Driver Part-Time",
         org: "ShopeeFood",
         points: [
@@ -91,8 +91,8 @@ export const cardSections = [
         ],
       },
       {
-        date: "2024",
-        title: "Proyek Mandiri — Web & Desain",
+        date: "Sekarang",
+        title: "Proyek Mandiri - Web & Desain",
         org: "Proyek pribadi / akademik",
         points: [
           "Membangun website responsif dengan HTML, CSS, dan JavaScript.",
@@ -110,12 +110,12 @@ export const cardSections = [
     desc: "Keterlibatan dalam kegiatan kampus dan kompetisi yang membentuk kemampuan kerja sama, disiplin, dan ketangguhan mental.",
     cards: [
       {
-        date: "2024 — 2025",
+        date: "2025 — 2026",
         title: "Finalis & Juara Rector Cup",
         org: "Lomba Internal — Universitas Muhammadiyah Malang",
         points: [
-          "Juara 1 cabang PKM (2024) pada kompetisi kreativitas tingkat kampus.",
-          "Juara 1 (2024) dan Juara 3 (2025) cabang Basket.",
+          "Juara 1 cabang PKM (2025) pada kompetisi kreativitas tingkat kampus.",
+          "Juara 1 (2025) dan Juara 3 (2026) cabang Basket.",
           "Berlatih bersama tim secara rutin di luar jam kuliah.",
         ],
       },
@@ -144,7 +144,6 @@ export const skills = {
         "Figma",
         "Canva",
         "Adobe Photoshop",
-        "UI/UX Design",
         "Poster & Banner",
         "Desain Sosial Media",
       ],
@@ -167,7 +166,6 @@ export const skills = {
       items: [
         "MySQL",
         "Git",
-        "Bootstrap",
         "VS Code",
         "Microsoft Office",
         "React Native",
