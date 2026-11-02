@@ -396,23 +396,31 @@ a {
   border-top: 1px solid rgba(207, 161, 68, 0.25);
 }
 .stats .wrap {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  padding-top: 26px;
-  padding-bottom: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 .stat {
   text-align: center;
+  padding: 0 clamp(30px, 10vw, 96px);
+}
+.stat + .stat {
+  border-left: 1px solid rgba(207, 161, 68, 0.4);
 }
 .stat .num {
   font-family: var(--font-display);
-  font-size: 1.7rem;
+  font-size: 2.35rem;
   font-weight: 600;
   color: var(--gold);
+  line-height: 1.1;
 }
 .stat .cap {
-  font-size: 0.85rem;
+  margin-top: 7px;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   color: #aeb6c4;
 }
 
@@ -1117,9 +1125,11 @@ footer.site-footer a:hover {
   .about-grid {
     grid-template-columns: 1fr;
   }
-  .stats .wrap {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
+  .stat {
+    padding: 0 34px;
+  }
+  .stat .num {
+    font-size: 2rem;
   }
   .cta-band {
     padding: 32px 28px;
@@ -1164,9 +1174,11 @@ footer.site-footer a:hover {
   .section {
     padding: 48px 0;
   }
-  .stats .wrap {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+  .stat {
+    padding: 0 22px;
+  }
+  .stat .num {
+    font-size: 1.85rem;
   }
   .hero .wrap {
     padding-top: 44px;
@@ -1219,11 +1231,15 @@ footer.site-footer a:hover {
   }
 }
 @media (max-width: 360px) {
-  .stats .wrap {
-    grid-template-columns: 1fr 1fr;
+  .stat {
+    padding: 0 14px;
+  }
+  .stat .cap {
+    letter-spacing: 0.08em;
+    font-size: 0.72rem;
   }
   .stat .num {
-    font-size: 1.45rem;
+    font-size: 1.55rem;
   }
 }
 

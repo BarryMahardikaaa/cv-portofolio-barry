@@ -33,7 +33,6 @@ export const hero = {
 export const stats = [
   { num: "3,68", cap: "IPK Terakhir" },
   { num: "5", cap: "Semester Berjalan" },
-  { num: "3", cap: "Semester Beasiswa" },
 ];
 
 export const about = {
